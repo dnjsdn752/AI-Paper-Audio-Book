@@ -37,7 +37,7 @@ api_url = API_URL
 secret_key = SECRET_KEY
 
 #translation
-#auth_key = "77a59737-132b-4dcf-86a8-2a8a6888c1c0:fx"
+#auth_key = ""
 
 
 # 발급받은 API 키 captioning

@@ -6,7 +6,7 @@ import time
 
 start = time.time()
 print(f'{start}')
-auth_key = "77a59737-132b-4dcf-86a8-2a8a6888c1c0:fx"
+auth_key = ""
 model = AutoModelForCausalLM.from_pretrained("microsoft/git-base-coco")
 processor = AutoProcessor.from_pretrained("microsoft/git-base-coco")
 point1 = time.time()
