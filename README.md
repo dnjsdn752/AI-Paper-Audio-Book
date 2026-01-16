@@ -1,4 +1,4 @@
-# AI Paper Audio Book (시각장애인을 위한 AI 점자책 리더)
+# AI Paper Audio Book (시각장애인을 위한 AI 종이책 기반 오디오북)
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/H%2FW-Jetson%20Nano-green?logo=nvidia&logoColor=white)](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
