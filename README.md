@@ -1,11 +1,14 @@
 # AI Paper Audio Book (시각장애인을 위한 AI 점자책 리더)
 
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
-[![YOLOv5](https://img.shields.io/badge/AI-YOLOv5-green)](https://github.com/ultralytics/yolov5)
-[![Platform](https://img.shields.io/badge/Platform-Jetson%20Nano%20(Ubuntu)-orange)](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
-[![AI](https://img.shields.io/badge/Tech-Deep%20Learning%20OCR%20%26%20Captioning-red)](#)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/H%2FW-Jetson%20Nano-green?logo=nvidia&logoColor=white)](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
+[![YOLOv5](https://img.shields.io/badge/AI-YOLOv5-yellow)](https://github.com/ultralytics/yolov5)
+[![OpenCV](https://img.shields.io/badge/Vision-OpenCV-red?logo=opencv&logoColor=white)](https://opencv.org/)
+[![OCR](https://img.shields.io/badge/OCR-Naver%20CLOVA%20%7C%20EasyOCR-00C73C)](https://www.ncloud.com/)
+[![TTS](https://img.shields.io/badge/TTS-Google%20Cloud-4285F4?logo=google-cloud&logoColor=white)](https://cloud.google.com/text-to-speech)
+[![Captioning](https://img.shields.io/badge/Captioning-SK%20Cloud%20%7C%20MS%20GIT-orange)](#)
 
-**AI Paper Audio Book**은 시각장애인이 종이책을 독립적으로 읽을 수 있도록 돕는 **임베디드 AI 솔루션**입니다. 카메라를 통해 책을 인식하고, **딥러닝 기반의 객체 탐지, OCR, 이미지 캡셔닝 기술**을 복합적으로 활용하여 책의 내용을 사람의 목소리로 생생하게 읽어줍니다.
+**AI Paper Audio Book**은 시각장애인이 종이책을 독립적으로 읽을 수 있도록 돕는 **임베디드 AI 솔루션**입니다. 카메라를 통해 책을 인식하고, **YOLOv5 객체 탐지, OCR, 이미지 캡셔닝** 기술을 유기적으로 결합하여 책의 내용을 사람의 목소리로 생생하게 읽어줍니다.
 
 <!-- [추천 이미지 배치]: 시스템 전체 구성도나 실제 하드웨어(Jetson Nano + 카메라 + 스피커)가 설치된 사진을 여기에 넣으면 좋습니다. -->
 <!-- ![System Overview](path/to/system_image.jpg) -->
@@ -85,15 +88,15 @@
 
 ## 💻 기술 스택 (Tech Stack)
 
-| 구분 | 기술 / 모델 (Technology & Models) |
-| --- | --- |
-| **Language** | Python 3.9+ |
-| **Object Detection** | YOLOv5 (Custom Trained: `best.pt`, `best_cover.pt`) |
-| **Computer Vision** | OpenCV (ORB Feature Matching), NumPy |
-| **OCR (Text)** | Deep Learning OCR & Scene Text Recognition |
-| **TTS (Voice)** | Neural Text-to-Speech (WaveNet) |
-| **Captioning** | Image Captioning Transformer |
-| **Platform** | NVIDIA Jetson Nano (Ubuntu 18.04/20.04) |
+| 구분 (Category) | 모델 / 기술 (Models & Tech) | 비고 (Note) |
+| --- | --- | --- |
+| **Language** | Python 3.9+ | |
+| **H/W Platform** | **NVIDIA Jetson Nano** (Ubuntu) | Embedded System |
+| **Object Detection** | **YOLOv5** (Custom Trained) | `best.pt` (Page), `best_cover.pt` (Cover) |
+| **Computer Vision** | **OpenCV** (ORB Algorithm) | Feature Matching, Image Preprocessing |
+| **OCR (Text)** | **Naver CLOVA OCR** (Online)<br>**EasyOCR** (Offline) | Main Architecture<br>Experimental Backup |
+| **Image Captioning** | **SK Cloud API** (Online)<br>**Microsoft GIT** (Offline) | Main Architecture<br>On-device Research (`microsoft/git-base-coco`) |
+| **TTS (Voice)** | **Google Cloud TTS** (WaveNet) | High-quality Neural Voice |
 
 ---
 
