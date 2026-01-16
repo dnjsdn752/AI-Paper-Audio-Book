@@ -1,4 +1,4 @@
-# AI Paper Audio Book (시각장애인을 위한 AI 종이책 기반 오디오북)
+# 시각장애인을 위한 종이책 기반 AI 오디오북
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/H%2FW-Jetson%20Nano-green?logo=nvidia&logoColor=white)](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
@@ -8,7 +8,7 @@
 [![TTS](https://img.shields.io/badge/TTS-Google%20Cloud-4285F4?logo=google-cloud&logoColor=white)](https://cloud.google.com/text-to-speech)
 [![Captioning](https://img.shields.io/badge/Captioning-SK%20Cloud%20%7C%20MS%20GIT-orange)](#)
 
-**AI Paper Audio Book**은 시각장애인이 종이책을 독립적으로 읽을 수 있도록 돕는 **임베디드 AI 솔루션**입니다. 카메라를 통해 책을 인식하고, **YOLOv5 객체 탐지, OCR, 이미지 캡셔닝** 기술을 유기적으로 결합하여 책의 내용을 사람의 목소리로 생생하게 읽어줍니다.
+**시각장애인을 위한 종이책 기반 AI 오디오북**은 시각장애인이 종이책을 독립적으로 읽을 수 있도록 돕는 **임베디드 AI 솔루션**입니다. 카메라를 통해 책을 인식하고, **YOLOv5 객체 탐지, OCR, 이미지 캡셔닝** 기술을 유기적으로 결합하여 책의 내용을 사람의 목소리로 생생하게 읽어줍니다.
 
 <div align="center" style="display: flex; justify-content: center; align-items: flex-start; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/aa603397-2fb9-401d-be49-faaa51678bae" width="48%" alt="시스템 이미지 1">
@@ -83,10 +83,10 @@
 
 
 ### 4. 사용자 경험을 위한 비동기 오디오 (Asynchronous Audio UX)
-시각장애인 사용자에게 "소리"는 시스템의 상태를 알 수 있는 유일한 피드백 수단입니다. 따라서 AI 연산 중에도 **끊김 없는 청각적 경험(Auditory Experience)**을 제공하는 것이 필수적입니다.
+시각장애인 사용자에게 "소리"는 시스템의 상태를 알 수 있는 유일한 피드백 수단입니다. 따라서 AI 연산 중에도 **끊김 없는 청각적 경험**을 제공하는 것이 필수적입니다.
 
 - **Non-blocking Audio Threading**:
-    - YOLOv5 객체 탐지나 OCR 서버 통신과 같은 **Heavy Computing 작업**이 수행되는 동안, 메인 프로세스를 멈추지(Blocking) 않고 별도의 스레드(`threading.Thread`)에서 안내음(예: "인식 중입니다...", "잠시만 기다려주세요")을 재생합니다.
+    - TTS 낭독이나 안내 음성이 출력되는 시간 동안, 시스템은 멈추지 않고 별도의 스레드(threading.Thread)에서 YOLOv5 탐지 및 OCR 연산과 같은 Heavy Computing 작업을 병렬로 수행합니다.
     - 이를 통해 사용자는 **시스템이 멈춘 것이 아니라 열심히 작업 중임**을 직관적으로 인지할 수 있으며, 체감 대기 시간을 획기적으로 줄였습니다.
 - **Latency Masking**:
     - 이미지 캡셔닝이나 텍스트 변환에 3~5초 이상 소요될 때, *Process Start* 시점에 즉시 효과음을 재생하여 상호작용의 공백을 메웁니다.
